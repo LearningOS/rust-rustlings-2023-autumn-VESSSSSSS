@@ -3,8 +3,6 @@
 // Execute `rustlings hint options3` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 struct Point {
     x: i32,
     y: i32,
@@ -12,8 +10,11 @@ struct Point {
 
 fn main() {
     let y: Option<Point> = Some(Point { x: 100, y: 200 });
-
-    match y {
+    let y_copy = match y {
+        Some(ref p) => Some(Point { x: p.x, y: p.y }), // 复制 Point 结构体的字段值
+        None => None,
+    };
+    match y_copy {
         Some(p) => println!("Co-ordinates are {},{} ", p.x, p.y),
         _ => panic!("no match!"),
     }
