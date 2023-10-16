@@ -40,7 +40,6 @@ pub fn capitalize_words_string(words: &[&str]) -> String {
 #[cfg(test)]
 mod tests {
     use super::*;
-
     #[test]
     fn test_success() {
         assert_eq!(capitalize_first("hello"), "Hello");
@@ -63,3 +62,5 @@ mod tests {
         assert_eq!(capitalize_words_string(&words), "Hello World");
     }
 }
+
+
